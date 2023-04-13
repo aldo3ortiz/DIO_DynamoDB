@@ -1,4 +1,7 @@
-<!-- Creating a table -->
+#
+# Creating a table
+#
+
 aws dynamodb create-table \
     --table-name Inventory \
     --attribute-definitions \
@@ -10,16 +13,25 @@ aws dynamodb create-table \
     --provisioned-throughput \
         ReadCapacityUnits=10,WriteCapacityUnits=5
 
-<!--Inserting an item-->
+#
+# Inserting an item
+#
+
 aws dynamodb put-item \
     --table-name Inventory \
     --item file://inventory.json \
 
-<!-- Inserting multiple items -->
+#
+# Inserting multiple items
+#
+
 aws dynamodb batch-write-item \
     --request-items file://batchInventory.json
 
-<!-- Creating a global secundary index based on an item type -->
+#
+# Creating a global secundary index based on an item type
+#
+
 aws dynamodb update-table \
     --table-name Inventory \
     --attribute-definitions AttributeName=itemType,AttributeType=S \
@@ -27,7 +39,10 @@ aws dynamodb update-table \
         "[{\"Create\":{\"IndexName\": \"itemType-index\",\"KeySchema\":[{\"AttributeName\":\"itemType\",\"KeyType\":\"HASH\"} ], \
         \"ProvisionedThroughput\": {\"ReadCapacityUnits\": 10, \"WriteCapacityUnits\": 5      },\"Projection\":{\"ProjectionType\":\"ALL\"}}}]"
 
-<!-- Creating a global secundary index based on item origin-->
+#
+# Creating a global secundary index based on item origin
+#
+
 aws dynamodb update-table \
     --table-name Inventory \
     --attribute-definitions\
@@ -36,7 +51,10 @@ aws dynamodb update-table \
         "[{\"Create\":{\"IndexName\": \"itemOrigin-index\",\"KeySchema\":[{\"AttributeName\":\"item\",\"KeyType\":\"HASH\"} ], \
         \"ProvisionedThroughput\": {\"ReadCapacityUnits\": 10, \"WriteCapacityUnits\": 5      },\"Projection\":{\"ProjectionType\":\"ALL\"}}}]"
 
-<!-- Creating a global secundary index based on item description -->
+#
+# Creating a global secundary index based on item description
+#
+
 aws dynamodb update-table \
     --table-name Inventory \
     --attribute-definitions\
@@ -45,13 +63,19 @@ aws dynamodb update-table \
         "[{\"Create\":{\"IndexName\": \"Description-index\",\"KeySchema\":[{\"AttributeName\":\"Description\",\"KeyType\":\"HASH\"} ], \
         \"ProvisionedThroughput\": {\"ReadCapacityUnits\": 10, \"WriteCapacityUnits\": 5      },\"Projection\":{\"ProjectionType\":\"ALL\"}}}]"
 
-<!-- Searching an iten by Code -->
+#
+# Searching an iten by Code
+#
+
 aws dynamodb query \
     --table-name Inventory \
     --key-condition-expression "Code = :code" \
     --expression-attribute-values  '{":code":{"S":"123"}}'
 
-<!-- Searching an item by Description -->
+#
+# Searching an item by Description
+#
+
 aws dynamodb query \
     --table-name Inventory \
     --index-name DescriptionItem-index \
