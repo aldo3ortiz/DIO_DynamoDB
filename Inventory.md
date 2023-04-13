@@ -64,7 +64,7 @@ aws dynamodb update-table \
         \"ProvisionedThroughput\": {\"ReadCapacityUnits\": 10, \"WriteCapacityUnits\": 5      },\"Projection\":{\"ProjectionType\":\"ALL\"}}}]"
 
 #
-# Searching an iten by Code
+# Searching an item by Code
 #
 
 aws dynamodb query \
