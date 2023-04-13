@@ -1,0 +1,62 @@
+[
+	{
+		"Code": "120",
+		"Description": "Computer Keyboard",
+		"itemType" : "hardware",
+		"itemOrigin": "imported"
+	},
+	{
+		"Code": "121",
+		"Description": "Computer Mouse",
+		"itemType" : "hardware",
+		"itemOrigin": "imported"
+	},
+	{
+		"Code": "122",
+		"Description": "Webcam 4k",
+		"itemType" : "hardware",
+		"itemOrigin": "China"
+	},
+	{	
+		"Code": "123",
+		"Description": "Computer Screen 28 inches",
+		"itemType" : "hardware",
+		"itemOrigin": "Taiwan"
+	},
+	{
+		"Code": "124",
+		"Description": "SSD drive",
+		"itemType" : "hardware",
+		"itemOrigin": "Taiwan"
+	},
+	{
+		"Code": "125",
+		"Description": "Windows 11 System",
+		"itemType" : "software",
+		"itemOrigin": "USA"
+	},
+	{
+		"Code": "126",
+		"Description": "Computer Keyboard",
+		"itemType" : "hardware",
+		"itemOrigin": "Taiwan"
+	},
+	{
+		"Code": "127",
+		"Description": "Computer Gaming Keyboard",
+		"itemType" : "hardware",
+		"itemOrigin": "Japan"
+	},
+	{
+		"Code": "128",
+		"Description": "Ubuntu 5 DVD System",
+		"itemType" : "software",
+		"itemOrigin": "USA"
+	},
+	{
+		"Code": "129",
+		"Description": "Kali Linux System",
+		"itemType" : "Software",
+		"itemOrigin": "USA"
+	}
+]
